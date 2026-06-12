@@ -22,6 +22,7 @@ class MapManager():
         self.block.setPos(position)
         self.color = self.getColor(int(position[2]))
         self.block.setColor(self.color)
+        self.block.setTag("at", str(position))
         self.block.reparentTo(self.land)
 
     def clear(self):
@@ -40,3 +41,4 @@ class MapManager():
                         block = self.addBlock((x, y, z0))
                     x += 1
                 y += 1
+        return x,y
